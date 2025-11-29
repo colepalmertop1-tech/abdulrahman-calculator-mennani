@@ -1,0 +1,87 @@
+ <!DOCTYPE html>
+ <html>
+        <title>abdo calculator</title>
+        <body>
+            <div id="display">0</div>
+            <div class="buttons">
+                <button onclick="press('7')">7</button>
+                <button onclick="press('8')">8</button>
+                <button onclick="press('9')">9</button>
+                <button onclick="press('/')">/</button>
+            
+                <button onclick="press('4')">4</button>
+                <button onclick="press('5')">5</button>
+                <button onclick="press('6')">6</button>
+                <button onclick="press('*')">*</button>
+            
+                <button onclick="press('1')">1</button>
+                <button onclick="press('2')">2</button>
+                <button onclick="press('3')">3</button>
+                <button onclick="press('-')">-</button>
+            
+                <button onclick="press('0')">0</button>
+                <button onclick="press('.')">.</button>
+                <button onclick="calculate()">=</button>
+                <button onclick="press('+')">+</button>
+            
+                <button onclick="clearDisplay()">abdo</button>
+            </div>
+
+                <style>
+ body {
+            font-family: arial;
+            text-align: center;
+            padding-top: 40px;
+ }
+ #display {
+        width: 260px;
+        margin: auto;
+        padding: 20px;
+        font-size: 2rem;
+        background: #018023;
+        border: 1px solid #000000;
+        text-align: right;
+        margin-bottom: 20px;
+        border-radius: 5px;
+    }
+    button {
+        width: 60px;
+        height: 60px;
+        margin: 5px;
+        font-size: 18px;}
+
+                </style>
+
+<script>
+    function press(value) {
+        let display = document.getElementById("display");
+
+        if (display.innerText === "0") {
+            display.innerText = value;
+        } else {
+            display.innerText += value;
+        }
+    }
+
+    function clearDisplay() {
+        document.getElementById("display").innerText = "0";
+    }
+
+    function calculate() {
+        let display = document.getElementById("display");
+        try {
+            display.innerText = eval(display.innerText);
+        } 
+        catch {
+            display.innerText = "Error";
+        }
+    }
+</script>
+
+        </body>
+
+
+
+
+
+ </html>
